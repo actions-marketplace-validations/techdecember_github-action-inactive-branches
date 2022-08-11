@@ -1,4 +1,4 @@
-name: Remove old branches
+name: cleanup-old-branches-dmf
 
 on:
   schedule:
