@@ -1,0 +1,35 @@
+name: Delete abandoned branches
+
+on:
+  schedule:
+  # POSIX cron time syntax. 5:30 UTC every day (10:30 PST)
+  - cron: '30 5 * * *'
+
+  # Allow workflow to be manually run from the GitHub UI
+  workflow_dispatch:
+
+jobs:
+  cleanup_old_branches:
+    runs-on: ubuntu-latest
+    name: Satisfy my repo CDO
+    steps:
+      - name: cleanup-old-branches
+        uses: drew-dectech/github-actions-delete-inactive-branches@v1.0.1
+        id: delete_stuff
+        with:
+          github_token: ${{ github.token }}
+          last_commit_age_days: 30
+          ignore_branches: next-version,dont-deleteme
+          github_base_url: https://github.com/drew-dectech/github-actions-delete-inactive-branches/
+          # Disable dry run and actually get stuff deleted
+          dry_run: yes
+          ignore_suffix: "_keep"
+
+      - name: Get output
+        run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
+
+
+# Continues if branch is in an open pull request
+# Continues if branch is base for a pull request
+# Continues if last commit is newer than last_commit_age_days
+# Continues if branch name ends with ignore_suffix
