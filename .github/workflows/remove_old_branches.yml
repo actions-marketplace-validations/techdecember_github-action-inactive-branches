@@ -14,13 +14,12 @@ jobs:
     name: Satisfy my repo CDO
     steps:
       - name: cleanup-old-branches-dmf
-        uses: drew-dectech/github-action-inactive-branches@1.0.3
+        uses: drew-dectech/github-action-inactive-branches@1.0.5
         id: delete_stuff
         with:
           github_token: ${{ github.token }}
           last_commit_age_days: 30
           ignore_branches: next-version,dont-deleteme
-          github_base_url: https://github.com/drew-dectech/github-actions-delete-inactive-branches/
           # Disable dry run and actually get stuff deleted
           dry_run: yes
           ignore_suffix: "_keep"
