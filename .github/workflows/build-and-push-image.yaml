@@ -3,8 +3,7 @@ name: Build and publish docker image
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - master
 
 jobs:
   build_and_push:
@@ -13,8 +12,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-        with:
-          repository: 'drew-dectech/github-action-inactive-branches'
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
