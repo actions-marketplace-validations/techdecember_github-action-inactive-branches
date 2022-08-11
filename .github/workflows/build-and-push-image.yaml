@@ -33,4 +33,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: drew-dectech/github-action-inactive-branches:latest
+          tags: drewdecembertech/github-action-inactive-branches
