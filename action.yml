@@ -1,8 +1,8 @@
 # action.yml
-name: 'cleanup-old-branches'
+name: 'cleanup-old-branches-dmf'
 description: |
   Deletes old branches from your repo as long as they aren't part of an open pull request, the default branch, or protected.
-author: Luis Pabon (PHPDocker.io)
+author: Drew Foster
 branding:
   icon: git-branch
   color: purple
