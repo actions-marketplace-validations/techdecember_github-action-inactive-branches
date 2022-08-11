@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+        with:
+          repository: 'https://github.com/drew-dectech/github-action-inactive-branches'
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
