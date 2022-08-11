@@ -1,4 +1,4 @@
-name: Delete abandoned branches
+name: Remove old branches
 
 on:
   schedule:
@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Satisfy my repo CDO
     steps:
-      - name: cleanup-old-branches
-        uses: drew-dectech/github-actions-delete-inactive-branches@v1.0.1
+      - name: cleanup-old-branches-dmf
+        uses: drew-dectech/github-action-inactive-branches@1.0.2
         id: delete_stuff
         with:
           github_token: ${{ github.token }}
