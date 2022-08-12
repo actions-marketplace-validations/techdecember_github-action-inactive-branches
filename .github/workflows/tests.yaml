@@ -18,10 +18,10 @@ jobs:
         id: delete_stuff
         with:
           github_token: ${{ github.token }}
-          last_commit_age_days: 9
-          dry_run: yes
-          ignore_branches: deletable-but-ignored
-          ignore_suffix: "_keep"
+          last_commit_age_days: 100
+          ignore_branches: next-version,dont-deleteme
+          github_base_url: ""
+          dry_run: no
 
       - name: Get output
         run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
