@@ -31,7 +31,7 @@ def parse_input() -> (list, int, bool, str, str, str, str):
 
     ignore_suffix = args[6]
 
-    return ignore_branches, last_commit_age_days, dry_run, github_token, github_repo, github_base_url, ignore_suffix
+    return ignore_suffix, ignore_branches, last_commit_age_days, dry_run, github_token, github_base_url, github_repo
 
 
 def format_output(output_strings: dict) -> None:

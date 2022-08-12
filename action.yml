@@ -44,4 +44,5 @@ runs:
     - ${{ inputs.dry_run }}
     - ${{ inputs.github_token }}
     - ${{ inputs.github_base_url }}
+    - ${{ inputs.ignore_suffix }}
 
