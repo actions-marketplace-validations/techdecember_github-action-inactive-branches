@@ -2,11 +2,11 @@ from src.github import Github
 
 
 def run_action(
+        ignore_suffix: str,
         github_repo: str,
         ignore_branches: list,
         last_commit_age_days: int,
         github_token: str,
-        ignore_suffix: str,
         github_base_url: str = 'https://api.github.com',
         dry_run: bool = True
 ) -> list:
