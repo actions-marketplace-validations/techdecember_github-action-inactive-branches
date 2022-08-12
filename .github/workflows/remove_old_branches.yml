@@ -32,3 +32,11 @@ jobs:
 # Continues if branch is base for a pull request
 # Continues if last commit is newer than last_commit_age_days
 # Continues if branch name ends with ignore_suffix
+
+#github_token: ${{ github.token }}
+#last_commit_age_days: 100
+#ignore_branches: next-version,dont-deleteme
+#github_base_url: https://github.mycompany.com/api/v3
+#
+## Disable dry run and actually get stuff deleted
+#dry_run: no

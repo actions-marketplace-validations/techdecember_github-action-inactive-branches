@@ -3,7 +3,9 @@ from os import getenv
 from typing import List
 
 
-def parse_input() -> (list, int, bool, str, str, str):
+# ignore_branches, days, dry_run, github_token, github_repo, github_base_url, ignore_suffix = io.parse_input()
+
+def parse_input() -> (list, int, bool, str, str, str, str):
     args: List[str] = sys.argv
 
     if len(args) != 6:
