@@ -22,7 +22,7 @@ jobs:
           ignore_branches: ""
           dry_run: yes
           github_base_url: "https://api.github.com"
-          ignore_suffix : "_keep""
+          ignore_suffix : "_keep"
 
       - name: Get output
         run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
