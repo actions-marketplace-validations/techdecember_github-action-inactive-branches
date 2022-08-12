@@ -2,7 +2,13 @@ from src import actions, io
 
 if __name__ == '__main__':
     ignore_suffix, ignore_branches, last_commit_age_days, dry_run, github_token, github_base_url, github_repo = io.parse_input()
-
+    print(ignore_suffix)
+    print(ignore_branches)
+    print(last_commit_age_days)
+    print(dry_run)
+    print(github_token)
+    print(github_base_url)
+    print(github_repo)
     deleted_branches = actions.run_action(
         ignore_branches=ignore_branches,
         last_commit_age_days=last_commit_age_days,
