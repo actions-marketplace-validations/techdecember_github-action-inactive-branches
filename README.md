@@ -1,4 +1,4 @@
-# Delete abandoned branches
+# cleanup-old-branches-dmf
 
 Github action to delete abandoned branches.
 
@@ -44,7 +44,7 @@ The following workflow will run on a schedule (daily at 00:00) and will delete a
 days:
 
 ```yaml
-name: Delete abandoned branches
+name: cleanup-old-branches-dmf
 
 on:
   # Run daily at midnight
@@ -60,7 +60,7 @@ jobs:
     name: Satisfy my repo CDO
     steps:
       - name: Delete those pesky dead branches
-        uses: phpdocker-io/github-actions-delete-abandoned-branches@v1
+        uses: drew-dectech/github-action-inactive-branches@v1
         id: delete_stuff
         with:
           github_token: ${{ github.token }}

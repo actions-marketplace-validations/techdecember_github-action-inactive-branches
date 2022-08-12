@@ -3,7 +3,9 @@ name: Build and publish docker image
 on:
   push:
     branches:
-      - master
+      - main
+  
+  workflow_dispatch:
 
 jobs:
   build_and_push:
@@ -29,5 +31,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          context: .
           push: true
-          tags: drew-dectech/github-action-inactive-branches:latest
+          tags: drewdecembertech/github-action-inactive-branches

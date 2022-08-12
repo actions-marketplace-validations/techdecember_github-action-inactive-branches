@@ -21,6 +21,7 @@ jobs:
           last_commit_age_days: 9
           dry_run: yes
           ignore_branches: deletable-but-ignored
+          ignore_suffix: "_keep"
 
       - name: Get output
         run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
