@@ -18,10 +18,11 @@ jobs:
         id: delete_stuff
         with:
           github_token: ${{ github.token }}
-          last_commit_age_days: 100
-          ignore_branches: next-version,dont-deleteme
-          github_base_url:
-          dry_run: no
+          last_commit_age_days: 30
+          ignore_branches: ""
+          dry_run: yes
+          github_base_url: "https://api.github.com"
+          ignore_suffix : "_keep""
 
       - name: Get output
         run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
@@ -32,10 +33,3 @@ jobs:
 # Continues if last commit is newer than last_commit_age_days
 # Continues if branch name ends with ignore_suffix
 
-#github_token: ${{ github.token }}
-#last_commit_age_days: 100
-#ignore_branches: next-version,dont-deleteme
-#github_base_url: https://github.mycompany.com/api/v3
-#
-## Disable dry run and actually get stuff deleted
-#dry_run: no
