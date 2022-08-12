@@ -48,7 +48,7 @@ class Github:
                     continue
 
                 # Move on if branch name ends with $ignore_suffix
-                if branch_name.endsWith(ignore_suffix):
+                if branch_name.endswith(ignore_suffix):
                     print(f'Ignoring `{branch_name}` because it ends with `{ignore_suffix}`')
                     continue
 
