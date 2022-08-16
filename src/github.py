@@ -47,6 +47,11 @@ class Github:
                     print(f'Ignoring `{branch_name}` because it is the default branch')
                     continue
 
+                # Looking for feature branches that start with "BW-" only, otherwise discard
+                if not branch_name.startswith("BW-"):
+                    print(f'Ignoring `{branch_name}` because it does not start with "BW-"')
+                    continue
+
                 # Move on if branch name ends with $ignore_suffix
                 if branch_name.endswith(ignore_suffix):
                     print(f'Ignoring `{branch_name}` because it ends with `{ignore_suffix}`')
