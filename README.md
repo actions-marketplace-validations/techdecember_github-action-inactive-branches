@@ -19,6 +19,7 @@ A branch must meet all the following criteria to be deemed abandoned and safe to
 * Must NOT be in an optional list of branches to ignore
 * Must be older than a given amount of days
 * Branch name must not end with `_keep_me`
+* Branch name must start with `BW-`
 
 ## Inputs
 
@@ -27,7 +28,7 @@ A branch must meet all the following criteria to be deemed abandoned and safe to
 | Name                   | Description                                                                                                                                     | Example                               |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
 | `ignore_branches`      | Comma-separated list of branches to ignore and never delete. You don't need to add your protected branches here.                                | `foo,bar`                             |
-| `last_commit_age_days` | How old in days must be the last commit into the branch for the branch to be deleted. Default: `60`                                             | `90`                                  |
+| `last_commit_age_days` | How old in days must be the last commit into the branch for the branch to be deleted. Default: `30`                                             | `90`                                  |
 | `dry_run`*             | Whether we're actually deleting branches at all. Possible values: `yes, no` (case sensitive). Default: `yes`                                    | `no`                                  |
 | `github_token`*        | The github token to use on requests to the github api. You can use the one github actions provide                                               | `${{ github.token }}`                 |
 | `github_base_url`      | The github API's base url. You only need to override this when using Github Enterprise on a different domain. Default: `https://api.github.com` | `https://github.mycompany.com/api/v3` |
