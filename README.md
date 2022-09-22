@@ -18,6 +18,7 @@ A branch must meet all the following criteria to be deemed abandoned and safe to
   GitHub you want to merge your pull request into.
 * Must NOT be in an optional list of branches to ignore
 * Must be older than a given amount of days
+* Branch name must not end with `_keep_me`
 
 ## Inputs
 
