@@ -48,8 +48,10 @@ class Github:
                     continue
 
                 # Looking for feature branches that start with "BW-" only, otherwise discard
-                if not branch_name.startswith("BW-"):
-                    print(f'Ignoring `{branch_name}` because it does not start with "BW-"')
+                # TODO: Change these to a delete_suffix input from the yml file?
+                if not branch_name.startswith("BW-") and not branch_name.startswith("feature/"):
+                    print(f'Ignoring `{branch_name}` because it does not start with "BW-" AND does not start with '
+                          '"feature/"')
                     continue
 
                 # Move on if branch name ends with $ignore_suffix
