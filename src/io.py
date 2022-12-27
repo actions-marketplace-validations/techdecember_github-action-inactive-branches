@@ -7,7 +7,7 @@ from typing import List
 # io.parse_input(),
 
 
-def parse_input() -> (list, tuple, int, bool, str, str, str, str):
+def parse_input() -> (list, int, bool, str, str, str, str, tuple):
     args: List[str] = sys.argv
 
     if len(args) != 8:
@@ -20,23 +20,23 @@ def parse_input() -> (list, tuple, int, bool, str, str, str, str):
     if ignore_branches == ['']:
         ignore_branches = []
 
-    prefixes_raw: str = args[2]
-    prefixes_to_delete = prefixes_raw.split(',')
-    if prefixes_to_delete == ['']:
-        raise RuntimeWarning('There are no prefixes to search.')
-
-    last_commit_age_days = int(args[3])
+    last_commit_age_days = int(args[2])
 
     # Dry run can only be either `true` or `false`, as strings due to github actions input limitations
-    dry_run = False if args[4] == 'no' else True
+    dry_run = False if args[3] == 'no' else True
 
-    github_token = args[5]
+    github_token = args[4]
 
     github_repo = getenv('GITHUB_REPOSITORY')
 
-    github_base_url = args[6]
+    github_base_url = args[5]
 
-    ignore_suffix = args[7]
+    ignore_suffix = args[6]
+
+    prefixes_raw: str = args[7]
+    prefixes_to_delete = prefixes_raw.split(',')
+    if prefixes_to_delete == ['']:
+        raise RuntimeWarning('There are no prefixes to search.')
 
     return ignore_branches, prefixes_to_delete, last_commit_age_days, dry_run, github_token, github_base_url, github_repo, ignore_suffix
 
