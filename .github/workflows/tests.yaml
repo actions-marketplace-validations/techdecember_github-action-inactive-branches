@@ -20,6 +20,7 @@ jobs:
           github_token: ${{ github.token }}
           last_commit_age_days: 100
           ignore_branches: next-version,dont-deleteme
+          prefixes_to_delete: feature/,BW
           github_base_url: ""
           dry_run: yes
 
