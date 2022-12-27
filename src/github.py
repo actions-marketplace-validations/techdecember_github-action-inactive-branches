@@ -17,7 +17,7 @@ class Github:
     def get_paginated_branches_url(self, page: int = 0) -> str:
         return f'{self.github_base_url}/repos/{self.github_repo}/branches?protected=false&per_page=30&page={page}'
 
-    def get_deletable_branches(self, last_commit_age_days: int, ignore_branches: list, ignore_suffix: str) -> list:
+    def get_deletable_branches(self, last_commit_age_days: int, ignore_branches: list, ignore_suffix: str, prefixes_to_delete: tuple) -> list:
         # Default branch might not be protected
         default_branch = self.get_default_branch()
 
@@ -47,11 +47,10 @@ class Github:
                     print(f'Ignoring `{branch_name}` because it is the default branch')
                     continue
 
-                # Looking for feature branches that start with "BW-" only, otherwise discard
-                # TODO: Change these to a delete_suffix input from the yml file?
-                if not branch_name.startswith("BW-") and not branch_name.startswith("feature/"):
-                    print(f'Ignoring `{branch_name}` because it does not start with "BW-" AND does not start with '
-                          '"feature/"')
+                # Looking for feature branches that start with a prefix within
+                # prefixes_to_delete only, otherwise discard
+                if not branch_name.startswith(prefixes_to_delete):
+                    print(f'Ignoring `{branch_name}` because it does not start with `{prefixes_to_delete}`')
                     continue
 
                 # Move on if branch name ends with $ignore_suffix
