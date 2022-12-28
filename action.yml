@@ -12,10 +12,6 @@ inputs:
     description: "Comma-separated list of branches to ignore and never delete. You don't need to add your protected branches here."
     required: false
     default: ""
-  prefixes_to_delete:
-    description: "Comma-separated list of prefixes to indicate it is OK for deletion."
-    required: false
-    default: ""
   last_commit_age_days:
     description: "How old in days must be the last commit into the branch for the branch to be deleted."
     required: false
@@ -32,6 +28,10 @@ inputs:
     default: "https://api.github.com"
   ignore_suffix:
     description: "Ignores branch names that end with this value."
+    required: false
+    default: ""
+  prefixes_to_delete:
+    description: "Comma-separated list of prefixes to indicate it is OK for deletion."
     required: false
     default: ""
 
