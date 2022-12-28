@@ -34,7 +34,7 @@ def parse_input() -> (list, int, bool, str, str, str, str, tuple):
     ignore_suffix = args[6]
 
     prefixes_raw: str = args[7]
-    prefixes_to_delete = prefixes_raw.split(',')
+    prefixes_to_delete: tuple = tuple(prefixes_raw.split(','))
     if prefixes_to_delete == ['']:
         raise RuntimeWarning('There are no prefixes to search.')
 
