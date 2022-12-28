@@ -33,6 +33,8 @@ A branch must meet all the following criteria to be deemed abandoned and safe to
 | `github_token`*        | The github token to use on requests to the github api. You can use the one github actions provide                                               | `${{ github.token }}`                 |
 | `github_base_url`      | The github API's base url. You only need to override this when using Github Enterprise on a different domain. Default: `https://api.github.com` | `https://github.mycompany.com/api/v3` |
 | `ignore_suffix` | Ignores branches with names that end in this value | `_keep_me`                                  |
+| `prefixes_to_delete` | Which prefixes indicate the branch is OK to delete | `feature/`                                  |
+
 
 ### Note: dry run
 
