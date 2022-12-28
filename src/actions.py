@@ -16,9 +16,9 @@ def run_action(
         'ignore_branches': ignore_branches,
         'last_commit_age_days': last_commit_age_days,
         'dry_run': dry_run,
-        'prefixes_to_delete': prefixes_to_delete,
         'github_base_url': github_base_url,
         'ignore_suffix': ignore_suffix,
+        'prefixes_to_delete': prefixes_to_delete,
     }
 
     print(f"Starting github action to cleanup old branches. Input: {input_data}")

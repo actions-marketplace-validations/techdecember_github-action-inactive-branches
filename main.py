@@ -12,13 +12,13 @@ if __name__ == '__main__':
     print(prefixes_to_delete)
     deleted_branches = actions.run_action(
         ignore_branches=ignore_branches,
-        prefixes_to_delete=prefixes_to_delete,
         last_commit_age_days=last_commit_age_days,
         dry_run=dry_run,
         github_repo=github_repo,
         github_token=github_token,
         github_base_url=github_base_url,
         ignore_suffix=ignore_suffix,
+        prefixes_to_delete=prefixes_to_delete
     )
 
     io.format_output({'deleted_branches': deleted_branches})
