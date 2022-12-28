@@ -44,10 +44,11 @@ runs:
   image: 'docker://drewdecembertech/github-action-inactive-branches:latest'
   args:
     - ${{ inputs.ignore_branches }}
-    - ${{ inputs.prefixes_to_delete }}
     - ${{ inputs.last_commit_age_days }}
     - ${{ inputs.dry_run }}
     - ${{ inputs.github_token }}
     - ${{ inputs.github_base_url }}
     - ${{ inputs.ignore_suffix }}
+    - ${{ inputs.prefixes_to_delete }}
+
 
